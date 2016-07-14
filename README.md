@@ -27,8 +27,39 @@ pod 'ZinkNavigation'
  *  设置导航栏背景颜色
  */
 - (void)zinkSetBackgroundColor:(UIColor *)color;
-[self.navigationController zinkSetBackgroundColor:[UIColor yellowColor]];
+[self.navigationController zinkSetBackgroundColor:[UIColor redColor]];
+```
+![source1](https://github.com/zinkLin/ZinkNavigation/blob/master/Source/source1.png)
 
+```objc
+/**
+ *  设置导航栏标题
+ */
+- (void)zinkSetTitle:(NSString *)title;
+[self.navigationController zinkSetTitle:@"Zink"];
+```
+![source2](https://github.com/zinkLin/ZinkNavigation/blob/master/Source/source2.png)
+
+```objc
+/**
+ *  设置导航栏标题样式
+ */
+- (void)zinkSetTitleColor:(UIColor *)color
+                     font:(UIFont *)font;
+[self.navigationController zinkSetTitleColor:[UIColor whiteColor] font:[UIFont boldSystemFontOfSize:23]];
+```
+![source3](https://github.com/zinkLin/ZinkNavigation/blob/master/Source/source3.png)
+
+```objc
+/**
+ *  设置电池条风格（前提：先在项目plist中添加 View controller-based status bar appearance,并将属性设置为NO）
+ */
+- (void)zinkSetStatuBarStyle:(StatuBarStyle)style;
+[self.navigationController zinkSetStatuBarStyle:StatuBarStyleLight];
+```
+![source4](https://github.com/zinkLin/ZinkNavigation/blob/master/Source/source4.png)
+
+```objc
 /**
  *  添加导航栏上的按钮,
  *  这个函数会返回一个默认的Button，如果Button的UI不是你所预期的，你可以获取这个Button，并对它进行修改
@@ -48,12 +79,23 @@ pod 'ZinkNavigation'
                             target:(id)target
                             action:(SEL)action
                        orientation:(BarItemOrientation)orientation;
-UIButton *button = [self.navigationController zinkAddItemWithTitle:@"back"
-                                                             iconImage:nil
-                                                       backgroundImage:nil
-                                                                target:self
-                                                                action:@selector(actionBack)
-                                                           orientation:BarItemOrientationLeft];
-
+UIButton *button = [self.navigationController zinkAddItemWithTitle:@"push"
+                                          iconImage:nil
+                                    backgroundImage:nil
+                                             target:self
+                                             action:@selector(showOtherViewController)
+                                        orientation:BarItemOrientationRight];
 ```
+![source5](https://github.com/zinkLin/ZinkNavigation/blob/master/Source/source5.png)
+
+```objc
+/**
+ *  设置导航栏标题视图
+ */
+- (void)zinkSetTitleView:(UIView *)view;
+UISwitch *switchZ = [UISwitch new];
+[self.navigationController zinkSetTitleView:switchZ];
+```
+![source6](https://github.com/zinkLin/ZinkNavigation/blob/master/Source/source6.png)
+
 
