@@ -19,15 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.navigationController zinkSetTitle:@"Home"];
-    [self.navigationController zinkSetTitleColor:[UIColor whiteColor] font:[UIFont boldSystemFontOfSize:17]];
-    [self.navigationController zinkSetBackgroundColor:[UIColor blackColor]];
+    [self.navigationController zinkSetBackgroundColor:[UIColor redColor]];
+    [self.navigationController zinkSetTitle:@"Zink"];
+    [self.navigationController zinkSetTitleColor:[UIColor whiteColor] font:[UIFont boldSystemFontOfSize:23]];
+    [self.navigationController zinkSetStatuBarStyle:StatuBarStyleLight];
     [self.navigationController zinkAddItemWithTitle:@"push"
                                           iconImage:nil
                                     backgroundImage:nil
                                              target:self
                                              action:@selector(showOtherViewController)
                                         orientation:BarItemOrientationRight];
+    
+    UISwitch *switchZ = [UISwitch new];
+    [self.navigationController zinkSetTitleView:switchZ];
 }
 
 - (void)showOtherViewController {
