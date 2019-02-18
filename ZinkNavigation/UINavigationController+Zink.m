@@ -167,6 +167,11 @@
     self.visibleViewController.navigationItem.rightBarButtonItems = nil;
 }
 
+- (void)zinkHideBottomLine {
+    UINavigationBar *navigationBar = self.navigationBar;
+    [navigationBar setShadowImage:[UIImage new]];
+}
+
 #pragma mark private
 -(void)addLeftBarButtonItem:(UIBarButtonItem *)leftBarButtonItem
 {

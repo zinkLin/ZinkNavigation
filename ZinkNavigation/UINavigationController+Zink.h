@@ -102,4 +102,9 @@ typedef NS_ENUM(NSInteger, StatuBarStyle) {
  *  清空所有item
  */
 - (void)zinkClearAllItem;
+
+/**
+ 隐藏导航栏底部横线
+ */
+- (void)zinkHideBottomLine;
 @end
